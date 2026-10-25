@@ -1,0 +1,11 @@
+# Personal references and intake questionnaires
+ShaanReferences/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor & local environment
+.vscode/
+.idea/
+*.log
