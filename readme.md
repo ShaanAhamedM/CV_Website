@@ -29,15 +29,16 @@ Then visit `http://localhost:3000`.
 ```
 D:\Projs\CV_Website\
 ├── index.html                      # Main HTML structure & views (Home, Work, About, Modal)
-├── PORTFOLIO_DATA_REQUIREMENTS.md  # Detailed questionnaire to fill with your real details
-├── README.md                       # Setup & customization guide
+├── readme.md                       # Setup & customization guide
 ├── css\
 │   └── style.css                   # Custom styles, grain noise overlay, custom cursor, Lenis
 ├── js\
 │   ├── data.js                     # Master data store (Projects, Experience, Skills, Config)
 │   └── app.js                      # Lenis smooth scroll, magnetic cursor, filtering, modals
-└── assets\
-    └── images\                     # Drop your portraits, screenshots, and CV PDF here
+├── assets\
+│   └── images\                     # Drop your portraits, screenshots, and CV PDF here
+└── ShaanReferences\                # Ignored by git (local personal notes & requirements)
+    └── portfolio_data_requirements.md
 ```
 
 ---
@@ -72,4 +73,4 @@ D:\Projs\CV_Website\
 
 ## 📝 Customization Instructions
 
-Please review [`PORTFOLIO_DATA_REQUIREMENTS.md`](file:///D:/Projs/CV_Website/PORTFOLIO_DATA_REQUIREMENTS.md) to provide your personal details, career history, and project list. Whenever you're ready, simply paste your information and we will update `js/data.js` and `assets/` for you!
+Please review [`ShaanReferences/portfolio_data_requirements.md`](file:///D:/Projs/CV_Website/ShaanReferences/portfolio_data_requirements.md) to provide your personal details, career history, and project list. Whenever you're ready, simply paste your information and we will update `js/data.js` and `assets/` for you!
