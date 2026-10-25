@@ -81,7 +81,7 @@ function renderFeaturedProjects() {
       onmouseleave="hideCustomCursor()"
       class="project-card group cursor-pointer ${proj.span || 'md:col-span-6'} reveal-up"
     >
-      <div class="relative ${proj.aspect || 'aspect-[16/10]'} w-full rounded-2xl overflow-hidden bg-ivory border border-lion/50 mb-5 shadow-sm">
+      <div class="relative ${proj.span === 'md:col-span-12' ? 'h-64 md:h-[380px]' : 'h-64 md:h-[440px]'} w-full rounded-2xl overflow-hidden bg-ivory border border-lion/50 mb-5 shadow-sm">
         <img 
           src="${proj.image}" 
           alt="${proj.title}" 
@@ -104,7 +104,7 @@ function renderFeaturedProjects() {
       <!-- Caption Underneath -->
       <div class="flex items-baseline justify-between gap-4 px-1">
         <div>
-          <h3 class="text-xl sm:text-2xl font-normal tracking-tight text-bistre group-hover:text-black transition-colors">
+          <h3 class="text-lg sm:text-xl font-normal tracking-tight text-bistre group-hover:text-black transition-colors">
             ${proj.title}
           </h3>
           <p class="text-sm text-kobicha mt-1 line-clamp-1 font-light">${proj.subtitle}</p>
@@ -265,10 +265,10 @@ function renderAboutDetails() {
   if (timelineEl && typeof EXPERIENCE_DATA !== 'undefined') {
     timelineEl.innerHTML = EXPERIENCE_DATA.map(exp => `
       <div class="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 items-baseline hover:bg-ivory/70 px-3 rounded-lg transition-colors">
-        <span class="sm:col-span-3 font-mono text-xs text-kobicha">${exp.year}</span>
-        <span class="sm:col-span-4 text-base font-medium text-bistre">${exp.company}</span>
+        <span class="sm:col-span-2 font-mono text-xs text-kobicha">${exp.year}</span>
+        <span class="sm:col-span-4 text-sm sm:text-base font-medium text-bistre">${exp.company}</span>
         <span class="sm:col-span-2 text-xs font-mono text-kobicha">${exp.type}</span>
-        <span class="sm:col-span-3 text-sm text-kobicha sm:text-right font-light">${exp.role}</span>
+        <span class="sm:col-span-4 text-sm text-kobicha sm:text-right font-light">${exp.role}</span>
       </div>
     `).join('');
   }
