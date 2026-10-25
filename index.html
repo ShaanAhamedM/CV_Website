@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,20 +17,24 @@
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
-  <!-- Tailwind Theme Configuration -->
+  <!-- Tailwind Theme Configuration: Warm Editorial Sand / Linen (#E2CEB1) -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            obsidian: '#0A0A0A',
-            charcoal: '#121212',
-            surface: '#181818',
-            alabaster: '#F4F3EF',
-            muted: '#8E8D8A',
-            subtle: '#262626',
-            accent: '#EDE8DF'
+            sand: '#E2CEB1',
+            sandDark: '#D6C0A2',
+            sandSurface: '#EDE2D0',
+            obsidian: '#E2CEB1',   // Base page background
+            charcoal: '#D6C0A2',   // Elevated card tone
+            surface: '#CEB899',
+            alabaster: '#141210',  // High-contrast ink text
+            ink: '#141210',
+            muted: '#61584F',      // Editorial secondary text
+            subtle: '#2A241E',
+            accent: '#141210'      // Editorial emphasis
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -49,9 +53,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="antialiased selection:bg-alabaster selection:text-obsidian">
+<body class="antialiased bg-[#E2CEB1] text-ink selection:bg-ink selection:text-sand">
 
-  <!-- Film Grain Texture Overlay (Awwwards / Kyson Editorial Texture) -->
+  <!-- Film Grain Texture Overlay (Tactile Editorial Linen / Paper Grain) -->
   <div class="noise-overlay"></div>
 
   <!-- Custom Magnetic Cursor Follower -->
@@ -65,33 +69,33 @@
   </div>
 
   <!-- ======================================================= -->
-  <!-- TOP FIXED NAVIGATION BAR (Kyson Dana Style Glassmorphic) -->
+  <!-- TOP FIXED NAVIGATION BAR (Editorial Glassmorphic Sand)  -->
   <!-- ======================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-obsidian/80 border-b border-white/[0.06] transition-all duration-500">
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#E2CEB1]/85 border-b border-black/[0.08] transition-all duration-500">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
       
       <!-- Brand Identity Left -->
       <a href="#home" onclick="switchView('home')" class="group flex items-center gap-3 text-left">
-        <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+        <div class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></div>
         <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted group-hover:text-alabaster transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
-          <span class="text-sm md:text-base font-medium tracking-tight text-alabaster cfg-full-name">Shaan Ahamed M</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-muted group-hover:text-ink transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
+          <span class="text-sm md:text-base font-medium tracking-tight text-ink cfg-full-name">Shaan Ahamed M</span>
         </div>
       </a>
 
       <!-- Center / Right Pill Navigation -->
-      <nav class="flex items-center gap-1 sm:gap-2 bg-charcoal/90 border border-white/[0.08] p-1.5 rounded-full shadow-lg">
-        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-alabaster transition-all">
+      <nav class="flex items-center gap-1 sm:gap-2 bg-[#D6C0A2]/80 border border-black/[0.08] p-1.5 rounded-full shadow-sm">
+        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all">
           Index
         </button>
-        <button onclick="switchView('work')" id="nav-work" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-alabaster transition-all flex items-center gap-1.5">
+        <button onclick="switchView('work')" id="nav-work" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all flex items-center gap-1.5">
           <span>Work</span>
-          <span class="text-[10px] font-mono bg-white/10 px-1.5 py-0.2 rounded-full text-alabaster" id="project-count-badge">12</span>
+          <span class="text-[10px] font-mono bg-black/10 px-1.5 py-0.2 rounded-full text-ink" id="project-count-badge">12</span>
         </button>
-        <button onclick="switchView('about')" id="nav-about" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-alabaster transition-all">
+        <button onclick="switchView('about')" id="nav-about" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all">
           About &amp; CV
         </button>
-        <a href="#contact-footer" class="px-4 py-1.5 rounded-full text-xs sm:text-sm bg-alabaster text-obsidian font-medium hover:bg-white transition-all ml-1">
+        <a href="#contact-footer" class="px-4 py-1.5 rounded-full text-xs sm:text-sm bg-ink text-sand font-medium hover:bg-black transition-all ml-1">
           Contact
         </a>
       </nav>
@@ -108,29 +112,29 @@
       <div class="max-w-5xl">
         
         <!-- Availability Pill -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-8 reveal-up active">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.05] border border-black/[0.08] mb-8 reveal-up active">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           <span class="text-xs font-mono uppercase tracking-widest text-muted cfg-status">Open for internships (Robotics &amp; Physical AI) — 2026/2027</span>
         </div>
 
         <!-- Headline with Italic Serif Accent -->
-        <h1 class="text-4xl sm:text-6xl md:text-[72px] font-normal tracking-[-0.03em] leading-[1.08] text-alabaster mb-10 reveal-up active">
+        <h1 class="text-4xl sm:text-6xl md:text-[72px] font-normal tracking-[-0.03em] leading-[1.08] text-ink mb-10 reveal-up active">
           Hi, I'm <span class="font-serif italic font-normal text-accent">Shaan</span> — Physical AI Builder, Embedded Systems Engineer &amp; Robotics Specialist for real-world autonomy.
         </h1>
 
         <!-- Editorial Sub-statement & Dual CTAs -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-6 border-t border-white/[0.08] reveal-up active">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-6 border-t border-black/[0.08] reveal-up active">
           <div class="md:col-span-7">
             <p class="text-lg sm:text-2xl text-muted font-light leading-relaxed">
-              CSE undergrad at <span class="text-alabaster font-normal">VIT Vellore</span> and <span class="text-alabaster font-normal">National Hackathon Runner-up</span> specializing in on-device AI and hardware-software integration. I build low-latency, zero-cloud physical AI systems—bridging autonomous rocker-bogie rovers and edge vision pipelines with real-world mechanical actuation.
+              CSE undergrad at <span class="text-ink font-normal">VIT Vellore</span> and <span class="text-ink font-normal">National Hackathon Runner-up</span> specializing in on-device AI and hardware-software integration. I build low-latency, zero-cloud physical AI systems—bridging autonomous rocker-bogie rovers and edge vision pipelines with real-world mechanical actuation.
             </p>
           </div>
           <div class="md:col-span-5 flex md:justify-end gap-3 flex-wrap">
-            <button onclick="switchView('about')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-white/15 hover:border-alabaster text-sm font-medium transition-all duration-300">
+            <button onclick="switchView('about')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-black/20 hover:border-black text-sm font-medium transition-all duration-300">
               <span>Meet Shaan</span>
               <span class="group-hover:translate-x-1 transition-transform">→</span>
             </button>
-            <button onclick="switchView('work')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/[0.08] hover:bg-alabaster hover:text-obsidian text-sm font-medium transition-all duration-300">
+            <button onclick="switchView('work')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-black/10 hover:bg-ink hover:text-sand text-sm font-medium transition-all duration-300">
               <span>Explore All Projects</span>
               <span class="font-mono text-xs opacity-75">(<span id="home-total-projects">12</span>)</span>
             </button>
@@ -140,17 +144,17 @@
     </section>
 
     <!-- SECTION 01: PHILOSOPHY -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-white/[0.07]">
+    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-black/[0.08]">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start reveal-up">
         <div class="lg:col-span-4">
           <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">01 / Philosophy</span>
           <h2 class="text-3xl sm:text-4xl font-normal tracking-tight">Stay curious and <span class="font-serif italic text-accent">Engineering machines that see, reason, and act.</span></h2>
         </div>
         <div class="lg:col-span-8">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.3] tracking-tight text-alabaster/90 mb-8">
+          <p class="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.3] tracking-tight text-ink/90 mb-8">
             True engineering lies in making complex systems work seamlessly together to solve real human problems economically. From training accelerated vision models to bridging embedded firmware with intuitive software, I focus on building accessible, zero-cloud-dependent tools that directly impact how people interact with the physical world.
           </p>
-          <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-muted hover:text-alabaster transition-colors group">
+          <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-muted hover:text-ink transition-colors group">
             <span>Read Full Story &amp; CV</span>
             <span class="group-hover:translate-x-1 transition-transform">↗</span>
           </button>
@@ -159,13 +163,13 @@
     </section>
 
     <!-- SECTION 02: RECENT WORK (ASYMMETRIC EDITORIAL GRID) -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-white/[0.07]">
+    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-black/[0.08]">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 reveal-up">
         <div>
           <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">02 / Selected Output</span>
           <h2 class="text-3xl sm:text-5xl font-normal tracking-tight">Recent work</h2>
         </div>
-        <button onclick="switchView('work')" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm text-muted hover:text-alabaster transition-colors group">
+        <button onclick="switchView('work')" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors group">
           <span>See all projects in the vault</span>
           <span class="group-hover:translate-x-1 transition-transform">→</span>
         </button>
@@ -178,16 +182,16 @@
 
       <!-- Bottom Archive CTA Pill -->
       <div class="mt-20 text-center reveal-up">
-        <button onclick="switchView('work')" class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full bg-charcoal border border-white/15 hover:border-alabaster text-base font-medium transition-all duration-500 hover:scale-[1.02]">
+        <button onclick="switchView('work')" class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full bg-[#D6C0A2] border border-black/15 hover:border-black text-base font-medium transition-all duration-500 hover:scale-[1.02]">
           <span>See all work &amp; full project vault</span>
-          <span class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-alabaster group-hover:text-obsidian flex items-center justify-center transition-colors">→</span>
+          <span class="w-8 h-8 rounded-full bg-black/10 group-hover:bg-ink group-hover:text-sand flex items-center justify-center transition-colors">→</span>
         </button>
       </div>
     </section>
 
     <!-- LABS & WRITINGS BANNER ("SECOND NATURE" STYLE CALLOUT) -->
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20">
-      <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#161616] via-[#111111] to-[#0A0A0A] border border-white/[0.08] p-8 sm:p-14 md:p-20 reveal-up">
+      <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#D9C4A6] via-[#D2BC9C] to-[#C9B291] border border-black/[0.09] p-8 sm:p-14 md:p-20 reveal-up">
         <div class="max-w-2xl relative z-10">
           <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-muted mb-4">
             <span class="cfg-full-name uppercase">BY SHAAN AHAMED M</span>
@@ -202,16 +206,16 @@
           </p>
 
           <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md">
-            <input type="email" required placeholder="Enter your email..." class="flex-1 px-5 py-3.5 rounded-full bg-obsidian/90 border border-white/15 text-sm text-alabaster placeholder:text-muted focus:outline-none focus:border-alabaster transition-colors" />
-            <button type="submit" class="px-7 py-3.5 rounded-full bg-alabaster text-obsidian font-medium text-sm hover:bg-white transition-all shrink-0">
+            <input type="email" required placeholder="Enter your email..." class="flex-1 px-5 py-3.5 rounded-full bg-[#E2CEB1] border border-black/15 text-sm text-ink placeholder:text-muted focus:outline-none focus:border-black transition-colors" />
+            <button type="submit" class="px-7 py-3.5 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all shrink-0">
               Get Access
             </button>
           </form>
-          <p id="newsletter-feedback" class="text-xs text-emerald-400 mt-3 hidden">Thanks! You're on the list.</p>
+          <p id="newsletter-feedback" class="text-xs text-emerald-800 font-medium mt-3 hidden">Thanks! You're on the list.</p>
         </div>
 
         <!-- Ambient blur glow -->
-        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-black/[0.03] rounded-full blur-3xl pointer-events-none"></div>
       </div>
     </section>
   </main>
@@ -234,23 +238,23 @@
       </div>
 
       <!-- Filter Bar + View Switcher (Grid vs Index Table) -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/[0.08] mb-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-black/[0.08] mb-12">
         
         <!-- Category Pills -->
         <div class="flex flex-wrap items-center gap-2" id="category-filters">
-          <button onclick="filterProjects('All')" data-cat="All" class="cat-btn bg-alabaster text-obsidian px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('All')" data-cat="All" class="cat-btn bg-ink text-sand px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             All Projects
           </button>
-          <button onclick="filterProjects('Physical AI & Robotics')" data-cat="Physical AI & Robotics" class="cat-btn bg-charcoal hover:bg-white/10 text-muted hover:text-alabaster border border-white/10 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('Physical AI & Robotics')" data-cat="Physical AI & Robotics" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             Physical AI &amp; Robotics
           </button>
-          <button onclick="filterProjects('AI & Vision')" data-cat="AI & Vision" class="cat-btn bg-charcoal hover:bg-white/10 text-muted hover:text-alabaster border border-white/10 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('AI & Vision')" data-cat="AI & Vision" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             AI &amp; Vision
           </button>
-          <button onclick="filterProjects('IoT & Embedded')" data-cat="IoT & Embedded" class="cat-btn bg-charcoal hover:bg-white/10 text-muted hover:text-alabaster border border-white/10 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('IoT & Embedded')" data-cat="IoT & Embedded" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             IoT &amp; Embedded
           </button>
-          <button onclick="filterProjects('Systems & Cloud')" data-cat="Systems & Cloud" class="cat-btn bg-charcoal hover:bg-white/10 text-muted hover:text-alabaster border border-white/10 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('Systems & Cloud')" data-cat="Systems & Cloud" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             Systems &amp; Tools
           </button>
         </div>
@@ -262,11 +266,11 @@
             id="project-search" 
             oninput="handleSearchProjects(this.value)"
             placeholder="Search stack or title..." 
-            class="px-4 py-2 rounded-full bg-charcoal border border-white/10 text-xs text-alabaster placeholder:text-muted focus:outline-none focus:border-alabaster w-48 sm:w-60"
+            class="px-4 py-2 rounded-full bg-[#EDE2D0] border border-black/10 text-xs text-ink placeholder:text-muted focus:outline-none focus:border-black w-48 sm:w-60"
           />
-          <div class="inline-flex rounded-full bg-charcoal p-1 border border-white/10">
-            <button onclick="setWorkLayout('grid')" id="layout-grid-btn" class="px-3 py-1 rounded-full text-xs font-mono bg-white/15 text-alabaster transition-all">Grid</button>
-            <button onclick="setWorkLayout('table')" id="layout-table-btn" class="px-3 py-1 rounded-full text-xs font-mono text-muted hover:text-alabaster transition-all">Index</button>
+          <div class="inline-flex rounded-full bg-[#D6C0A2] p-1 border border-black/10">
+            <button onclick="setWorkLayout('grid')" id="layout-grid-btn" class="px-3 py-1 rounded-full text-xs font-mono bg-black/15 text-ink transition-all">Grid</button>
+            <button onclick="setWorkLayout('table')" id="layout-table-btn" class="px-3 py-1 rounded-full text-xs font-mono text-muted hover:text-ink transition-all">Index</button>
           </div>
         </div>
       </div>
@@ -278,14 +282,14 @@
 
       <!-- WORK COMPACT ARCHIVE TABLE CONTAINER (Cursor-following Image Preview) -->
       <div id="work-table-container" class="hidden">
-        <div class="grid grid-cols-12 text-xs font-mono uppercase tracking-widest text-muted pb-4 border-b border-white/10 px-4">
+        <div class="grid grid-cols-12 text-xs font-mono uppercase tracking-widest text-muted pb-4 border-b border-black/10 px-4">
           <div class="col-span-2 sm:col-span-1">Year</div>
           <div class="col-span-6 sm:col-span-4">Project / System</div>
           <div class="hidden sm:block sm:col-span-3">Category</div>
           <div class="hidden md:block md:col-span-3">Tech / Stack</div>
           <div class="col-span-4 sm:col-span-1 text-right">Link</div>
         </div>
-        <div id="archive-rows-list" class="divide-y divide-white/[0.06]">
+        <div id="archive-rows-list" class="divide-y divide-black/[0.07]">
           <!-- Injected via JavaScript -->
         </div>
       </div>
@@ -300,14 +304,14 @@
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 pb-28">
       
       <!-- Top Narrative Header + Portrait Container -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pb-20 border-b border-white/[0.08]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pb-20 border-b border-black/[0.08]">
         <div class="lg:col-span-7 reveal-up active">
           <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-4">About &amp; Curriculum Vitae</span>
           <h1 class="text-4xl sm:text-6xl font-normal tracking-tight leading-[1.08] mb-8">
             <span class="cfg-full-name">Shaan Ahamed M</span> is a Computer Science Engineer and Physical AI specialist dedicated to <span class="font-serif italic text-accent">building autonomous machines that see, reason, and act in the real world.</span>
           </h1>
           <p class="text-lg sm:text-xl text-muted font-light leading-relaxed mb-6">
-            Currently pursuing Computer Science Engineering at <span class="text-alabaster font-normal">VIT Vellore</span> and a National Hackathon Runner-up who thrives where high stakes meet tight deadlines. My engineering philosophy is simple: stay curious, build with empathy, and deliver under pressure.
+            Currently pursuing Computer Science Engineering at <span class="text-ink font-normal">VIT Vellore</span> and a National Hackathon Runner-up who thrives where high stakes meet tight deadlines. My engineering philosophy is simple: stay curious, build with empathy, and deliver under pressure.
           </p>
           <p class="text-lg sm:text-xl text-muted font-light leading-relaxed">
             Whether optimizing Embedded C++ algorithms on microcontrollers, training computer vision pipelines, or deploying autonomous rovers across rough terrain, I specialize in turning technical complexity into tangible, zero-cloud real-world tools.
@@ -316,40 +320,40 @@
 
         <!-- High-Contrast Portrait Container -->
         <div class="lg:col-span-5 reveal-up active">
-          <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-charcoal border border-white/10 group">
+          <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#D6C0A2] border border-black/10 group">
             <img 
               id="about-portrait"
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=85" 
               alt="Portrait Placeholder" 
               class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
             />
-            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-obsidian/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#E2CEB1]/90 backdrop-blur-md border border-black/10 flex items-center justify-between">
               <div>
                 <p class="text-xs font-mono uppercase text-muted">Ready for your portrait</p>
-                <p class="text-sm text-alabaster cfg-location">Vellore, India / Remote</p>
+                <p class="text-sm text-ink cfg-location">Vellore, India / Remote</p>
               </div>
-              <a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-full bg-alabaster text-obsidian text-xs font-medium hover:bg-white transition-all">Download CV PDF</a>
+              <a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-full bg-ink text-sand text-xs font-medium hover:bg-black transition-all">Download CV PDF</a>
             </div>
           </div>
         </div>
       </div>
 
       <!-- 01 / TRACK RECORD (EXPERIENCE TIMELINE) -->
-      <div class="py-20 border-b border-white/[0.08] reveal-up">
+      <div class="py-20 border-b border-black/[0.08] reveal-up">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div class="lg:col-span-4">
             <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">01 / Track Record</span>
             <h2 class="text-3xl sm:text-4xl font-normal tracking-tight">Academic rigor &amp; <span class="font-serif italic text-accent">hackathon victories.</span></h2>
           </div>
 
-          <div class="lg:col-span-8 divide-y divide-white/[0.08]" id="experience-timeline-container">
+          <div class="lg:col-span-8 divide-y divide-black/[0.08]" id="experience-timeline-container">
             <!-- Injected via JavaScript -->
           </div>
         </div>
       </div>
 
       <!-- 02 / CAPABILITIES MATRIX (3 COLUMNS) -->
-      <div class="py-20 border-b border-white/[0.08] reveal-up">
+      <div class="py-20 border-b border-black/[0.08] reveal-up">
         <div class="max-w-3xl mb-14">
           <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">02 / Capabilities</span>
           <h2 class="text-3xl sm:text-5xl font-normal tracking-tight leading-tight">
@@ -374,9 +378,9 @@
               Whether it was taking apart gadgets as a kid, pulling all-nighters at 36-hour hackathons soldering microcontrollers, or obsessing over edge inference latency, engineering has always been about understanding mechanics and code from first principles.
             </p>
             <p>
-              Over the last few years, I’ve built assistive IoT hardware like the award-winning <span class="text-alabaster font-normal">Vision Stick</span>, autonomous rocker-bogie rovers under partial observability (POMDP), 3D spatial NeRF reconstructors, and real-time agricultural telemetry probes. Each project reinforced one core conviction: true engineering doesn't need multi-thousand-dollar cloud servers; it needs smart, elegant architecture.
+              Over the last few years, I’ve built assistive IoT hardware like the award-winning <span class="text-ink font-normal">Vision Stick</span>, autonomous rocker-bogie rovers under partial observability (POMDP), 3D spatial NeRF reconstructors, and real-time agricultural telemetry probes. Each project reinforced one core conviction: true engineering doesn't need multi-thousand-dollar cloud servers; it needs smart, elegant architecture.
             </p>
-            <p class="text-alabaster font-normal">
+            <p class="text-ink font-normal">
               We need builders who have heart, care deeply about craft, and can translate ambitious autonomy into working physical reality. If you only live once, this sure is a pretty cool time to build.
             </p>
           </div>
@@ -389,16 +393,16 @@
   <!-- ======================================================= -->
   <!-- PROJECT CASE STUDY MODAL                                -->
   <!-- ======================================================= -->
-  <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-10 bg-obsidian/90 backdrop-blur-xl overflow-y-auto" onclick="if(event.target === this) closeProjectModal()">
-    <div class="relative w-full max-w-4xl bg-charcoal border border-white/15 rounded-3xl overflow-hidden shadow-2xl my-auto">
+  <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-10 bg-black/50 backdrop-blur-md overflow-y-auto" onclick="if(event.target === this) closeProjectModal()">
+    <div class="relative w-full max-w-4xl bg-[#EDE2D0] border border-black/15 rounded-3xl overflow-hidden shadow-2xl my-auto text-ink">
       
       <!-- Top Modal Bar -->
-      <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-white/10">
+      <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-black/10">
         <div class="flex items-center gap-3">
-          <span id="modal-category" class="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-white/10 text-alabaster">Category</span>
+          <span id="modal-category" class="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-black/10 text-ink">Category</span>
           <span id="modal-year" class="text-xs font-mono text-muted">2026</span>
         </div>
-        <button onclick="closeProjectModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-alabaster hover:text-obsidian flex items-center justify-center text-sm transition-colors">
+        <button onclick="closeProjectModal()" class="w-9 h-9 rounded-full bg-black/10 hover:bg-ink hover:text-sand flex items-center justify-center text-sm transition-colors">
           ✕
         </button>
       </div>
@@ -408,37 +412,37 @@
         <h2 id="modal-title" class="text-3xl sm:text-5xl font-normal tracking-tight mb-4">Project Title</h2>
         <p id="modal-subtitle" class="text-lg text-muted font-light mb-8">Project one-line hook goes here.</p>
 
-        <div class="aspect-video rounded-2xl overflow-hidden bg-obsidian mb-8 border border-white/10">
+        <div class="aspect-video rounded-2xl overflow-hidden bg-[#D6C0A2] mb-8 border border-black/10">
           <img id="modal-image" src="" alt="Project Cover" class="w-full h-full object-cover" />
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 p-5 rounded-2xl bg-obsidian/60 border border-white/[0.06]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 p-5 rounded-2xl bg-[#E2CEB1]/70 border border-black/[0.08]">
           <div>
             <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Role</span>
-            <p id="modal-role" class="text-sm text-alabaster">Lead Hardware &amp; AI Architect</p>
+            <p id="modal-role" class="text-sm text-ink">Lead Hardware &amp; AI Architect</p>
           </div>
           <div>
             <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Tech Stack</span>
-            <p id="modal-stack" class="text-sm text-alabaster">Embedded C, ESP32, Python, OpenCV</p>
+            <p id="modal-stack" class="text-sm text-ink">Embedded C, ESP32, Python, OpenCV</p>
           </div>
           <div>
             <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Outcome / Impact</span>
-            <p id="modal-metrics" class="text-sm text-emerald-400">Awarded 2nd Prize @ INNOHACK '26</p>
+            <p id="modal-metrics" class="text-sm text-emerald-800 font-medium">Awarded 2nd Prize @ INNOHACK '26</p>
           </div>
         </div>
 
         <div class="space-y-4 text-muted leading-relaxed mb-10">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-alabaster">Overview &amp; Architecture</h4>
+          <h4 class="text-xs font-mono uppercase tracking-widest text-ink">Overview &amp; Architecture</h4>
           <p id="modal-description">
             Detailed case study breakdown.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-4 pt-6 border-t border-white/10">
-          <a id="modal-live-link" href="#" target="_blank" class="px-6 py-3 rounded-full bg-alabaster text-obsidian font-medium text-sm hover:bg-white transition-all">
+        <div class="flex flex-wrap gap-4 pt-6 border-t border-black/10">
+          <a id="modal-live-link" href="#" target="_blank" class="px-6 py-3 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all">
             Launch Live Project ↗
           </a>
-          <a id="modal-repo-link" href="#" target="_blank" class="px-6 py-3 rounded-full border border-white/15 hover:border-alabaster text-sm text-alabaster transition-all">
+          <a id="modal-repo-link" href="#" target="_blank" class="px-6 py-3 rounded-full border border-black/20 hover:border-black text-sm text-ink transition-all">
             View Source / GitHub ↗
           </a>
         </div>
@@ -449,10 +453,10 @@
   <!-- ======================================================= -->
   <!-- FOOTER (EXACT KYSON DANA FOOTER ARCHITECTURE)            -->
   <!-- ======================================================= -->
-  <footer id="contact-footer" class="border-t border-white/[0.08] bg-obsidian pt-20 pb-16">
+  <footer id="contact-footer" class="border-t border-black/[0.08] bg-[#D6C0A2] pt-20 pb-16 text-ink">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-20 border-b border-white/[0.08] reveal-up">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-20 border-b border-black/[0.08] reveal-up">
         
         <!-- Col 1: Work With Me -->
         <div class="md:col-span-5">
@@ -460,7 +464,7 @@
           <h2 class="text-4xl sm:text-5xl font-normal tracking-tight mb-6">
             Let’s build something <span class="font-serif italic text-accent">unforgettable.</span>
           </h2>
-          <a href="mailto:shaanahamedm@gmail.com" class="cfg-email inline-flex items-center gap-3 px-7 py-4 rounded-full bg-alabaster text-obsidian font-medium text-sm hover:bg-white transition-all">
+          <a href="mailto:shaanahamedm@gmail.com" class="cfg-email inline-flex items-center gap-3 px-7 py-4 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all">
             <span>shaanahamedm@gmail.com</span>
             <span>↗</span>
           </a>
@@ -471,14 +475,14 @@
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">Connect</span>
             <ul class="space-y-2.5 text-sm">
-              <li><a href="https://github.com/ShaanAhamedM" target="_blank" class="text-muted hover:text-alabaster transition-colors">GitHub ↗</a></li>
-              <li><a href="https://www.linkedin.com/in/shaanahamedm/" target="_blank" class="text-muted hover:text-alabaster transition-colors">LinkedIn ↗</a></li>
-              <li><a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="text-muted hover:text-alabaster transition-colors">Resume / CV (PDF) ↗</a></li>
+              <li><a href="https://github.com/ShaanAhamedM" target="_blank" class="text-muted hover:text-ink transition-colors">GitHub ↗</a></li>
+              <li><a href="https://www.linkedin.com/in/shaanahamedm/" target="_blank" class="text-muted hover:text-ink transition-colors">LinkedIn ↗</a></li>
+              <li><a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="text-muted hover:text-ink transition-colors">Resume / CV (PDF) ↗</a></li>
             </ul>
           </div>
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-1">Location</span>
-            <p class="text-sm text-alabaster cfg-location">Vellore, India / Remote</p>
+            <p class="text-sm text-ink cfg-location">Vellore, India / Remote</p>
           </div>
         </div>
 
@@ -489,8 +493,8 @@
             Occasional notes and breakdowns exploring physical AI, on-device neural perception, and autonomous robotics architectures.
           </p>
           <form onsubmit="handleNewsletter(event)" class="flex gap-2">
-            <input type="email" required placeholder="you@domain.com" class="flex-1 px-4 py-3 rounded-full bg-charcoal border border-white/10 text-xs text-alabaster placeholder:text-muted focus:outline-none focus:border-alabaster" />
-            <button type="submit" class="px-5 py-3 rounded-full bg-white/10 hover:bg-alabaster hover:text-obsidian text-xs font-medium transition-colors">
+            <input type="email" required placeholder="you@domain.com" class="flex-1 px-4 py-3 rounded-full bg-[#EDE2D0] border border-black/10 text-xs text-ink placeholder:text-muted focus:outline-none focus:border-black" />
+            <button type="submit" class="px-5 py-3 rounded-full bg-black/10 hover:bg-ink hover:text-sand text-xs font-medium transition-colors">
               Join
             </button>
           </form>
@@ -502,7 +506,7 @@
       <!-- Bottom Copyright & Scroll to Top -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted font-mono gap-4">
         <p>© 2026 <span class="cfg-full-name">Shaan Ahamed M</span>. Physical AI &amp; Autonomous Systems.</p>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-alabaster transition-colors">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-ink transition-colors">
           Back to top ↑
         </button>
       </div>
