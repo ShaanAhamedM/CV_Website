@@ -1,9 +1,8 @@
 /**
  * ==========================================================================
  * APPLICATION LOGIC & MOTION CHOREOGRAPHY
- * Warm Editorial Sand / Linen Theme (#E2CEB1)
- * Integrates Lenis Smooth Inertial Scroll, Magnetic Cursor, Floating Table
- * Previews, Instant Filtering & Case Study Modal.
+ * Cream Palette: Bistre (#391E10), Kobicha (#734128), Lion (#C7A07A),
+ *                Dun (#E2CEB1), Ivory (#FDFCE8)
  * ==========================================================================
  */
 
@@ -40,7 +39,6 @@ function initLenis() {
 function populateSiteConfig() {
   if (typeof SITE_CONFIG === 'undefined') return;
 
-  // Header and Title
   const brandNames = document.querySelectorAll('.cfg-full-name');
   brandNames.forEach(el => el.textContent = SITE_CONFIG.fullName);
 
@@ -59,7 +57,6 @@ function populateSiteConfig() {
     if (el.tagName === 'A') el.href = `mailto:${SITE_CONFIG.email}`;
   });
 
-  // Project count badges
   const totalCount = PROJECTS_DATA.length;
   const countBadge = document.getElementById('project-count-badge');
   if (countBadge) countBadge.textContent = totalCount;
@@ -69,7 +66,7 @@ function populateSiteConfig() {
 }
 
 /**
- * 2. RENDER FEATURED WORK ON HOME VIEW (Asymmetric Bento/Editorial Grid)
+ * 2. RENDER FEATURED WORK ON HOME VIEW
  */
 function renderFeaturedProjects() {
   const container = document.getElementById('featured-projects-container');
@@ -84,35 +81,35 @@ function renderFeaturedProjects() {
       onmouseleave="hideCustomCursor()"
       class="project-card group cursor-pointer ${proj.span || 'md:col-span-6'} reveal-up"
     >
-      <div class="relative ${proj.aspect || 'aspect-[16/10]'} w-full rounded-2xl overflow-hidden bg-[#D6C0A2] border border-black/[0.08] mb-5">
+      <div class="relative ${proj.aspect || 'aspect-[16/10]'} w-full rounded-2xl overflow-hidden bg-ivory border border-lion/50 mb-5 shadow-sm">
         <img 
           src="${proj.image}" 
           alt="${proj.title}" 
           loading="lazy"
           class="card-media w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-bistre/50 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity"></div>
         
         <!-- Badges -->
         <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-[#E2CEB1]/90 backdrop-blur-md text-ink border border-black/10">
+          <span class="px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-ivory/95 backdrop-blur-md text-bistre border border-lion/50 font-medium">
             ${proj.category}
           </span>
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-[#E2CEB1]/90 backdrop-blur-md text-muted border border-black/10">
+          <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-ivory/95 backdrop-blur-md text-kobicha border border-lion/50 font-medium">
             ${proj.year}
           </span>
         </div>
       </div>
 
-      <!-- Caption Underneath (Exact Kyson Editorial Pattern) -->
+      <!-- Caption Underneath -->
       <div class="flex items-baseline justify-between gap-4 px-1">
         <div>
-          <h3 class="text-xl sm:text-2xl font-normal tracking-tight text-ink group-hover:text-black transition-colors">
+          <h3 class="text-xl sm:text-2xl font-normal tracking-tight text-bistre group-hover:text-black transition-colors">
             ${proj.title}
           </h3>
-          <p class="text-sm text-muted mt-1 line-clamp-1 font-light">${proj.subtitle}</p>
+          <p class="text-sm text-kobicha mt-1 line-clamp-1 font-light">${proj.subtitle}</p>
         </div>
-        <span class="text-xs font-mono uppercase tracking-widest text-muted group-hover:text-ink shrink-0 transition-colors flex items-center gap-1">
+        <span class="text-xs font-mono uppercase tracking-widest text-kobicha group-hover:text-bistre shrink-0 transition-colors flex items-center gap-1 font-medium">
           <span>${proj.status || 'View'}</span>
           <span class="group-hover:translate-x-1 transition-transform">→</span>
         </span>
@@ -124,7 +121,7 @@ function renderFeaturedProjects() {
 }
 
 /**
- * 3. RENDER ALL PROJECTS ON WORK VIEW (Supports 20 to 50+ Projects Seamlessly)
+ * 3. RENDER ALL PROJECTS ON WORK VIEW
  */
 function renderWorkArchive() {
   const gridContainer = document.getElementById('work-grid-container');
@@ -142,25 +139,24 @@ function renderWorkArchive() {
     return matchesCat && matchesSearch;
   });
 
-  // Empty state if search returns nothing
   if (filtered.length === 0) {
     gridContainer.innerHTML = `
-      <div class="col-span-full py-16 text-center text-muted font-light">
+      <div class="col-span-full py-16 text-center text-kobicha font-light">
         <p class="text-lg">No projects found matching "${currentSearch}".</p>
-        <button onclick="clearSearch()" class="mt-4 px-4 py-2 rounded-full border border-black/15 text-xs font-mono uppercase tracking-wider text-ink hover:bg-black/10 transition-colors">
+        <button onclick="clearSearch()" class="mt-4 px-4 py-2 rounded-full border border-bistre/20 text-xs font-mono uppercase tracking-wider text-bistre hover:bg-ivory transition-colors">
           Clear Search
         </button>
       </div>
     `;
     tableContainer.innerHTML = `
-      <div class="py-12 text-center text-muted font-light">
+      <div class="py-12 text-center text-kobicha font-light">
         <p class="text-base">No projects match the current filter.</p>
       </div>
     `;
     return;
   }
 
-  // 1. Render Visual Grid Mode
+  // 1. Grid Mode
   gridContainer.innerHTML = filtered.map(proj => `
     <article 
       onclick="openProjectModal('${proj.id}')"
@@ -168,49 +164,49 @@ function renderWorkArchive() {
       onmouseleave="hideCustomCursor()"
       class="project-card group cursor-pointer reveal-up active"
     >
-      <div class="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#D6C0A2] border border-black/[0.08] mb-4">
+      <div class="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-ivory border border-lion/50 mb-4 shadow-sm">
         <img src="${proj.image}" alt="${proj.title}" loading="lazy" class="card-media w-full h-full object-cover" />
         <div class="absolute top-4 left-4 flex gap-2">
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-[#E2CEB1]/90 backdrop-blur-md text-ink border border-black/10">
+          <span class="px-3 py-1 rounded-full text-[11px] font-mono uppercase tracking-wider bg-ivory/95 backdrop-blur-md text-bistre border border-lion/50 font-medium">
             ${proj.category}
           </span>
         </div>
       </div>
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h3 class="text-xl font-normal text-ink group-hover:text-black transition-colors">${proj.title}</h3>
-          <p class="text-sm text-muted mt-0.5 line-clamp-1 font-light">${proj.subtitle}</p>
-          <p class="text-xs font-mono text-muted mt-2 tracking-wide">${proj.stack || ''}</p>
+          <h3 class="text-xl font-normal text-bistre group-hover:text-black transition-colors">${proj.title}</h3>
+          <p class="text-sm text-kobicha mt-0.5 line-clamp-1 font-light">${proj.subtitle}</p>
+          <p class="text-xs font-mono text-kobicha/80 mt-2 tracking-wide">${proj.stack || ''}</p>
         </div>
-        <span class="text-xs font-mono uppercase text-muted group-hover:text-ink shrink-0 mt-1">
+        <span class="text-xs font-mono uppercase text-kobicha group-hover:text-bistre shrink-0 mt-1 font-medium">
           ${proj.year} ↗
         </span>
       </div>
     </article>
   `).join('');
 
-  // 2. Render Compact Index Table Mode (Optimized for 20-50+ Projects)
+  // 2. Table Mode
   tableContainer.innerHTML = filtered.map(proj => `
     <div 
       onclick="openProjectModal('${proj.id}')"
       onmouseenter="showArchiveFloatingPreview('${proj.image}')"
       onmouseleave="hideArchiveFloatingPreview()"
-      class="grid grid-cols-12 py-5 px-4 items-center hover:bg-black/[0.04] cursor-pointer transition-colors group"
+      class="grid grid-cols-12 py-5 px-4 items-center hover:bg-ivory/80 cursor-pointer transition-colors group"
     >
-      <div class="col-span-2 sm:col-span-1 font-mono text-xs text-muted">${proj.year}</div>
+      <div class="col-span-2 sm:col-span-1 font-mono text-xs text-kobicha">${proj.year}</div>
       <div class="col-span-6 sm:col-span-4">
-        <p class="text-base font-medium text-ink group-hover:translate-x-1 transition-transform">${proj.title}</p>
-        <p class="text-xs text-muted line-clamp-1 font-light">${proj.subtitle}</p>
+        <p class="text-base font-medium text-bistre group-hover:translate-x-1 transition-transform">${proj.title}</p>
+        <p class="text-xs text-kobicha line-clamp-1 font-light">${proj.subtitle}</p>
       </div>
       <div class="hidden sm:block sm:col-span-3">
-        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-black/[0.05] text-muted border border-black/[0.08]">
+        <span class="px-2.5 py-1 rounded-full text-[11px] font-mono bg-ivory text-kobicha border border-lion/40">
           ${proj.category}
         </span>
       </div>
-      <div class="hidden md:block md:col-span-3 text-xs font-mono text-muted truncate pr-4">
+      <div class="hidden md:block md:col-span-3 text-xs font-mono text-kobicha/85 truncate pr-4">
         ${proj.stack || ''}
       </div>
-      <div class="col-span-4 sm:col-span-1 text-right font-mono text-xs text-muted group-hover:text-ink">
+      <div class="col-span-4 sm:col-span-1 text-right font-mono text-xs text-kobicha group-hover:text-bistre font-medium">
         ${proj.status === 'Coming soon' ? 'Soon' : 'View ↗'}
       </div>
     </div>
@@ -228,9 +224,9 @@ function filterProjects(category) {
   currentCategory = category;
   document.querySelectorAll('.cat-btn').forEach(btn => {
     if (btn.dataset.cat === category) {
-      btn.className = "cat-btn bg-ink text-sand px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all";
+      btn.className = "cat-btn bg-bistre text-ivory px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all shadow-sm";
     } else {
-      btn.className = "cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all";
+      btn.className = "cat-btn bg-ivory hover:bg-dun text-kobicha hover:text-bistre border border-lion/50 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all";
     }
   });
   renderWorkArchive();
@@ -251,13 +247,13 @@ function setWorkLayout(mode) {
   if (mode === 'grid') {
     gridEl.classList.remove('hidden');
     tableEl.classList.add('hidden');
-    gridBtn.className = "px-3 py-1 rounded-full text-xs font-mono bg-black/15 text-ink transition-all";
-    tableBtn.className = "px-3 py-1 rounded-full text-xs font-mono text-muted hover:text-ink transition-all";
+    gridBtn.className = "px-3 py-1 rounded-full text-xs font-mono bg-dun text-bistre font-medium transition-all";
+    tableBtn.className = "px-3 py-1 rounded-full text-xs font-mono text-kobicha hover:text-bistre transition-all";
   } else {
     gridEl.classList.add('hidden');
     tableEl.classList.remove('hidden');
-    tableBtn.className = "px-3 py-1 rounded-full text-xs font-mono bg-black/15 text-ink transition-all";
-    gridBtn.className = "px-3 py-1 rounded-full text-xs font-mono text-muted hover:text-ink transition-all";
+    tableBtn.className = "px-3 py-1 rounded-full text-xs font-mono bg-dun text-bistre font-medium transition-all";
+    gridBtn.className = "px-3 py-1 rounded-full text-xs font-mono text-kobicha hover:text-bistre transition-all";
   }
 }
 
@@ -265,26 +261,24 @@ function setWorkLayout(mode) {
  * 4. RENDER EXPERIENCE TIMELINE & CAPABILITIES (About View)
  */
 function renderAboutDetails() {
-  // Experience Timeline
   const timelineEl = document.getElementById('experience-timeline-container');
   if (timelineEl && typeof EXPERIENCE_DATA !== 'undefined') {
     timelineEl.innerHTML = EXPERIENCE_DATA.map(exp => `
-      <div class="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 items-baseline hover:bg-black/[0.03] px-3 rounded-lg transition-colors">
-        <span class="sm:col-span-3 font-mono text-xs text-muted">${exp.year}</span>
-        <span class="sm:col-span-4 text-base font-medium text-ink">${exp.company}</span>
-        <span class="sm:col-span-2 text-xs font-mono text-muted">${exp.type}</span>
-        <span class="sm:col-span-3 text-sm text-muted sm:text-right font-light">${exp.role}</span>
+      <div class="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 items-baseline hover:bg-ivory/70 px-3 rounded-lg transition-colors">
+        <span class="sm:col-span-3 font-mono text-xs text-kobicha">${exp.year}</span>
+        <span class="sm:col-span-4 text-base font-medium text-bistre">${exp.company}</span>
+        <span class="sm:col-span-2 text-xs font-mono text-kobicha">${exp.type}</span>
+        <span class="sm:col-span-3 text-sm text-kobicha sm:text-right font-light">${exp.role}</span>
       </div>
     `).join('');
   }
 
-  // Capabilities 3-Column Matrix
   const capabilitiesEl = document.getElementById('capabilities-container');
   if (capabilitiesEl && typeof CAPABILITIES_DATA !== 'undefined') {
     capabilitiesEl.innerHTML = CAPABILITIES_DATA.map(col => `
-      <div class="p-8 rounded-2xl bg-[#EDE2D0]/90 border border-black/[0.08] hover:border-black/20 transition-all shadow-sm">
-        <h3 class="text-lg font-medium text-ink mb-6 pb-4 border-b border-black/10">${col.title}</h3>
-        <ul class="space-y-3 text-sm text-muted font-light">
+      <div class="p-8 rounded-2xl bg-ivory border border-lion/50 hover:border-bistre transition-all shadow-sm">
+        <h3 class="text-lg font-medium text-bistre mb-6 pb-4 border-b border-bistre/10">${col.title}</h3>
+        <ul class="space-y-3 text-sm text-kobicha font-light">
           ${col.skills.map(s => `<li>${s}</li>`).join('')}
         </ul>
       </div>
@@ -293,7 +287,7 @@ function renderAboutDetails() {
 }
 
 /**
- * 5. SPA VIEW NAVIGATION (Home / Work / About)
+ * 5. SPA VIEW NAVIGATION
  */
 function switchView(viewName) {
   const views = ['home', 'work', 'about'];
@@ -428,7 +422,7 @@ function hideArchiveFloatingPreview() {
 }
 
 /**
- * 8. SCROLL REVEALS WITH INTERSECTION OBSERVER
+ * 8. SCROLL REVEALS
  */
 function observeReveals() {
   const observer = new IntersectionObserver((entries) => {
@@ -443,7 +437,7 @@ function observeReveals() {
 }
 
 /**
- * 9. NEWSLETTER SUBSCRIPTION MOCK
+ * 9. NEWSLETTER
  */
 function handleNewsletter(e) {
   e.preventDefault();

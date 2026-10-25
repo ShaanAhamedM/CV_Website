@@ -17,24 +17,28 @@
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 
-  <!-- Tailwind Theme Configuration: Warm Editorial Sand / Linen (#E2CEB1) -->
+  <!-- Tailwind Theme Configuration: Exact Palette from 25+ Best Cream Color Palettes -->
+  <!-- Swatches: Bistre (#391E10), Kobicha (#734128), Lion (#C7A07A), Dun (#E2CEB1), Ivory (#FDFCE8) -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           colors: {
+            bistre: '#391E10',
+            kobicha: '#734128',
+            lion: '#C7A07A',
+            dun: '#E2CEB1',
+            ivory: '#FDFCE8',
+            
+            // Unified Semantic Mapping
             sand: '#E2CEB1',
-            sandDark: '#D6C0A2',
-            sandSurface: '#EDE2D0',
-            obsidian: '#E2CEB1',   // Base page background
-            charcoal: '#D6C0A2',   // Elevated card tone
-            surface: '#CEB899',
-            alabaster: '#141210',  // High-contrast ink text
-            ink: '#141210',
-            muted: '#61584F',      // Editorial secondary text
-            subtle: '#2A241E',
-            accent: '#141210'      // Editorial emphasis
+            obsidian: '#E2CEB1',
+            charcoal: '#FDFCE8',
+            alabaster: '#391E10',
+            ink: '#391E10',
+            muted: '#734128',
+            accent: '#391E10'
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -53,9 +57,9 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="antialiased bg-[#E2CEB1] text-ink selection:bg-ink selection:text-sand">
+<body class="antialiased bg-dun text-bistre selection:bg-bistre selection:text-ivory">
 
-  <!-- Film Grain Texture Overlay (Tactile Editorial Linen / Paper Grain) -->
+  <!-- Film Grain Texture Overlay (Tactile Linen / Paper Texture) -->
   <div class="noise-overlay"></div>
 
   <!-- Custom Magnetic Cursor Follower -->
@@ -69,33 +73,33 @@
   </div>
 
   <!-- ======================================================= -->
-  <!-- TOP FIXED NAVIGATION BAR (Editorial Glassmorphic Sand)  -->
+  <!-- TOP FIXED NAVIGATION BAR (Editorial Cream Glassmorphic) -->
   <!-- ======================================================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#E2CEB1]/85 border-b border-black/[0.08] transition-all duration-500">
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-dun/85 border-b border-bistre/10 transition-all duration-500">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
       
       <!-- Brand Identity Left -->
       <a href="#home" onclick="switchView('home')" class="group flex items-center gap-3 text-left">
         <div class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></div>
         <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted group-hover:text-ink transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
-          <span class="text-sm md:text-base font-medium tracking-tight text-ink cfg-full-name">Shaan Ahamed M</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha group-hover:text-bistre transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
+          <span class="text-sm md:text-base font-medium tracking-tight text-bistre cfg-full-name">Shaan Ahamed M</span>
         </div>
       </a>
 
       <!-- Center / Right Pill Navigation -->
-      <nav class="flex items-center gap-1 sm:gap-2 bg-[#D6C0A2]/80 border border-black/[0.08] p-1.5 rounded-full shadow-sm">
-        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all">
+      <nav class="flex items-center gap-1 sm:gap-2 bg-ivory border border-lion/50 p-1.5 rounded-full shadow-sm">
+        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all">
           Index
         </button>
-        <button onclick="switchView('work')" id="nav-work" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all flex items-center gap-1.5">
+        <button onclick="switchView('work')" id="nav-work" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all flex items-center gap-1.5">
           <span>Work</span>
-          <span class="text-[10px] font-mono bg-black/10 px-1.5 py-0.2 rounded-full text-ink" id="project-count-badge">12</span>
+          <span class="text-[10px] font-mono bg-dun px-1.5 py-0.2 rounded-full text-bistre" id="project-count-badge">12</span>
         </button>
-        <button onclick="switchView('about')" id="nav-about" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-muted hover:text-ink transition-all">
+        <button onclick="switchView('about')" id="nav-about" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all">
           About &amp; CV
         </button>
-        <a href="#contact-footer" class="px-4 py-1.5 rounded-full text-xs sm:text-sm bg-ink text-sand font-medium hover:bg-black transition-all ml-1">
+        <a href="#contact-footer" class="px-4 py-1.5 rounded-full text-xs sm:text-sm bg-bistre text-ivory font-medium hover:bg-black transition-all ml-1">
           Contact
         </a>
       </nav>
@@ -112,31 +116,31 @@
       <div class="max-w-5xl">
         
         <!-- Availability Pill -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.05] border border-black/[0.08] mb-8 reveal-up active">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ivory/80 border border-lion/40 mb-8 reveal-up active shadow-sm">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-          <span class="text-xs font-mono uppercase tracking-widest text-muted cfg-status">Open for internships (Robotics &amp; Physical AI) — 2026/2027</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha cfg-status">Open for internships (Robotics &amp; Physical AI) — 2026/2027</span>
         </div>
 
         <!-- Headline with Italic Serif Accent -->
-        <h1 class="text-4xl sm:text-6xl md:text-[72px] font-normal tracking-[-0.03em] leading-[1.08] text-ink mb-10 reveal-up active">
-          Hi, I'm <span class="font-serif italic font-normal text-accent">Shaan</span> — Physical AI Builder, Embedded Systems Engineer &amp; Robotics Specialist for real-world autonomy.
+        <h1 class="text-4xl sm:text-6xl md:text-[72px] font-normal tracking-[-0.03em] leading-[1.08] text-bistre mb-10 reveal-up active">
+          Hi, I'm <span class="font-serif italic font-normal text-bistre">Shaan</span> — Physical AI Builder, Embedded Systems Engineer &amp; Robotics Specialist for real-world autonomy.
         </h1>
 
         <!-- Editorial Sub-statement & Dual CTAs -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-6 border-t border-black/[0.08] reveal-up active">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pt-6 border-t border-bistre/10 reveal-up active">
           <div class="md:col-span-7">
-            <p class="text-lg sm:text-2xl text-muted font-light leading-relaxed">
-              CSE undergrad at <span class="text-ink font-normal">VIT Vellore</span> and <span class="text-ink font-normal">National Hackathon Runner-up</span> specializing in on-device AI and hardware-software integration. I build low-latency, zero-cloud physical AI systems—bridging autonomous rocker-bogie rovers and edge vision pipelines with real-world mechanical actuation.
+            <p class="text-lg sm:text-2xl text-kobicha font-light leading-relaxed">
+              CSE undergrad at <span class="text-bistre font-normal">VIT Vellore</span> and <span class="text-bistre font-normal">National Hackathon Runner-up</span> specializing in on-device AI and hardware-software integration. I build low-latency, zero-cloud physical AI systems—bridging autonomous rocker-bogie rovers and edge vision pipelines with real-world mechanical actuation.
             </p>
           </div>
           <div class="md:col-span-5 flex md:justify-end gap-3 flex-wrap">
-            <button onclick="switchView('about')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full border border-black/20 hover:border-black text-sm font-medium transition-all duration-300">
+            <button onclick="switchView('about')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-ivory border border-lion/60 hover:border-bistre text-sm font-medium text-bistre transition-all duration-300 shadow-sm">
               <span>Meet Shaan</span>
               <span class="group-hover:translate-x-1 transition-transform">→</span>
             </button>
-            <button onclick="switchView('work')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-black/10 hover:bg-ink hover:text-sand text-sm font-medium transition-all duration-300">
+            <button onclick="switchView('work')" class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-bistre hover:bg-black text-ivory text-sm font-medium transition-all duration-300 shadow-sm">
               <span>Explore All Projects</span>
-              <span class="font-mono text-xs opacity-75">(<span id="home-total-projects">12</span>)</span>
+              <span class="font-mono text-xs opacity-80">(<span id="home-total-projects">12</span>)</span>
             </button>
           </div>
         </div>
@@ -144,17 +148,17 @@
     </section>
 
     <!-- SECTION 01: PHILOSOPHY -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-black/[0.08]">
+    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20 md:py-28 border-t border-bistre/10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start reveal-up">
         <div class="lg:col-span-4">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">01 / Philosophy</span>
-          <h2 class="text-3xl sm:text-4xl font-normal tracking-tight">Stay curious and <span class="font-serif italic text-accent">Engineering machines that see, reason, and act.</span></h2>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-2">01 / Philosophy</span>
+          <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-bistre">Stay curious and <span class="font-serif italic">Engineering machines that see, reason, and act.</span></h2>
         </div>
         <div class="lg:col-span-8">
-          <p class="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.3] tracking-tight text-ink/90 mb-8">
+          <p class="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.3] tracking-tight text-bistre/95 mb-8">
             True engineering lies in making complex systems work seamlessly together to solve real human problems economically. From training accelerated vision models to bridging embedded firmware with intuitive software, I focus on building accessible, zero-cloud-dependent tools that directly impact how people interact with the physical world.
           </p>
-          <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-muted hover:text-ink transition-colors group">
+          <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-kobicha hover:text-bistre transition-colors group">
             <span>Read Full Story &amp; CV</span>
             <span class="group-hover:translate-x-1 transition-transform">↗</span>
           </button>
@@ -163,13 +167,13 @@
     </section>
 
     <!-- SECTION 02: RECENT WORK (ASYMMETRIC EDITORIAL GRID) -->
-    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-black/[0.08]">
+    <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-bistre/10">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 reveal-up">
         <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">02 / Selected Output</span>
-          <h2 class="text-3xl sm:text-5xl font-normal tracking-tight">Recent work</h2>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-3">02 / Selected Output</span>
+          <h2 class="text-3xl sm:text-5xl font-normal tracking-tight text-bistre">Recent work</h2>
         </div>
-        <button onclick="switchView('work')" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors group">
+        <button onclick="switchView('work')" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm text-kobicha hover:text-bistre transition-colors group">
           <span>See all projects in the vault</span>
           <span class="group-hover:translate-x-1 transition-transform">→</span>
         </button>
@@ -182,32 +186,32 @@
 
       <!-- Bottom Archive CTA Pill -->
       <div class="mt-20 text-center reveal-up">
-        <button onclick="switchView('work')" class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full bg-[#D6C0A2] border border-black/15 hover:border-black text-base font-medium transition-all duration-500 hover:scale-[1.02]">
+        <button onclick="switchView('work')" class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full bg-ivory border border-lion/60 hover:border-bistre text-base font-medium text-bistre transition-all duration-500 hover:scale-[1.02] shadow-sm">
           <span>See all work &amp; full project vault</span>
-          <span class="w-8 h-8 rounded-full bg-black/10 group-hover:bg-ink group-hover:text-sand flex items-center justify-center transition-colors">→</span>
+          <span class="w-8 h-8 rounded-full bg-dun group-hover:bg-bistre group-hover:text-ivory flex items-center justify-center transition-colors">→</span>
         </button>
       </div>
     </section>
 
     <!-- LABS & WRITINGS BANNER ("SECOND NATURE" STYLE CALLOUT) -->
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 py-20">
-      <div class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#D9C4A6] via-[#D2BC9C] to-[#C9B291] border border-black/[0.09] p-8 sm:p-14 md:p-20 reveal-up">
+      <div class="relative rounded-3xl overflow-hidden bg-ivory border border-lion/50 p-8 sm:p-14 md:p-20 reveal-up shadow-sm">
         <div class="max-w-2xl relative z-10">
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-muted mb-4">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-kobicha mb-4">
             <span class="cfg-full-name uppercase">BY SHAAN AHAMED M</span>
             <span>•</span>
             <span>ROBOTICS &amp; PHYSICAL AI LABS</span>
           </div>
-          <h3 class="text-3xl sm:text-5xl font-normal tracking-tight leading-[1.1] mb-6">
-            My laboratory of autonomous robotics, edge vision models, and <span class="font-serif italic text-accent">zero-cloud physical AI experiments.</span>
+          <h3 class="text-3xl sm:text-5xl font-normal tracking-tight leading-[1.1] text-bistre mb-6">
+            My laboratory of autonomous robotics, edge vision models, and <span class="font-serif italic">zero-cloud physical AI experiments.</span>
           </h3>
-          <p class="text-muted text-base sm:text-lg mb-8 font-light">
+          <p class="text-kobicha text-base sm:text-lg mb-8 font-light">
             Exploring the frontiers where embedded C++, low-latency neural perception, and physical mechanical actuation converge.
           </p>
 
           <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-3 max-w-md">
-            <input type="email" required placeholder="Enter your email..." class="flex-1 px-5 py-3.5 rounded-full bg-[#E2CEB1] border border-black/15 text-sm text-ink placeholder:text-muted focus:outline-none focus:border-black transition-colors" />
-            <button type="submit" class="px-7 py-3.5 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all shrink-0">
+            <input type="email" required placeholder="Enter your email..." class="flex-1 px-5 py-3.5 rounded-full bg-dun/50 border border-lion/60 text-sm text-bistre placeholder:text-kobicha/70 focus:outline-none focus:border-bistre transition-colors" />
+            <button type="submit" class="px-7 py-3.5 rounded-full bg-bistre text-ivory font-medium text-sm hover:bg-black transition-all shrink-0">
               Get Access
             </button>
           </form>
@@ -215,7 +219,7 @@
         </div>
 
         <!-- Ambient blur glow -->
-        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-black/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-lion/15 rounded-full blur-3xl pointer-events-none"></div>
       </div>
     </section>
   </main>
@@ -228,33 +232,33 @@
       
       <!-- Section Header -->
       <div class="max-w-4xl mb-14 reveal-up active">
-        <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">Complete Portfolio Index</span>
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-[1.05] mb-6">
-          Featured work &amp; <span class="font-serif italic text-accent">the full project archive.</span>
+        <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-3">Complete Portfolio Index</span>
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-[1.05] text-bistre mb-6">
+          Featured work &amp; <span class="font-serif italic">the full project archive.</span>
         </h1>
-        <p class="text-lg sm:text-xl text-muted font-light leading-relaxed">
+        <p class="text-lg sm:text-xl text-kobicha font-light leading-relaxed">
           From award-winning assistive smart canes and autonomous rocker-bogie rovers to on-device edge vision and agricultural telemetry, explore the complete catalog of projects I've engineered and shipped.
         </p>
       </div>
 
       <!-- Filter Bar + View Switcher (Grid vs Index Table) -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-black/[0.08] mb-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-bistre/10 mb-12">
         
         <!-- Category Pills -->
         <div class="flex flex-wrap items-center gap-2" id="category-filters">
-          <button onclick="filterProjects('All')" data-cat="All" class="cat-btn bg-ink text-sand px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('All')" data-cat="All" class="cat-btn bg-bistre text-ivory px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all shadow-sm">
             All Projects
           </button>
-          <button onclick="filterProjects('Physical AI & Robotics')" data-cat="Physical AI & Robotics" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('Physical AI & Robotics')" data-cat="Physical AI & Robotics" class="cat-btn bg-ivory hover:bg-dun text-kobicha hover:text-bistre border border-lion/50 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             Physical AI &amp; Robotics
           </button>
-          <button onclick="filterProjects('AI & Vision')" data-cat="AI & Vision" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('AI & Vision')" data-cat="AI & Vision" class="cat-btn bg-ivory hover:bg-dun text-kobicha hover:text-bistre border border-lion/50 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             AI &amp; Vision
           </button>
-          <button onclick="filterProjects('IoT & Embedded')" data-cat="IoT & Embedded" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('IoT & Embedded')" data-cat="IoT & Embedded" class="cat-btn bg-ivory hover:bg-dun text-kobicha hover:text-bistre border border-lion/50 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             IoT &amp; Embedded
           </button>
-          <button onclick="filterProjects('Systems & Cloud')" data-cat="Systems & Cloud" class="cat-btn bg-black/[0.06] hover:bg-black/10 text-muted hover:text-ink border border-black/[0.08] px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
+          <button onclick="filterProjects('Systems & Cloud')" data-cat="Systems & Cloud" class="cat-btn bg-ivory hover:bg-dun text-kobicha hover:text-bistre border border-lion/50 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all">
             Systems &amp; Tools
           </button>
         </div>
@@ -266,11 +270,11 @@
             id="project-search" 
             oninput="handleSearchProjects(this.value)"
             placeholder="Search stack or title..." 
-            class="px-4 py-2 rounded-full bg-[#EDE2D0] border border-black/10 text-xs text-ink placeholder:text-muted focus:outline-none focus:border-black w-48 sm:w-60"
+            class="px-4 py-2 rounded-full bg-ivory border border-lion/50 text-xs text-bistre placeholder:text-kobicha/70 focus:outline-none focus:border-bistre w-48 sm:w-60 shadow-sm"
           />
-          <div class="inline-flex rounded-full bg-[#D6C0A2] p-1 border border-black/10">
-            <button onclick="setWorkLayout('grid')" id="layout-grid-btn" class="px-3 py-1 rounded-full text-xs font-mono bg-black/15 text-ink transition-all">Grid</button>
-            <button onclick="setWorkLayout('table')" id="layout-table-btn" class="px-3 py-1 rounded-full text-xs font-mono text-muted hover:text-ink transition-all">Index</button>
+          <div class="inline-flex rounded-full bg-ivory p-1 border border-lion/50 shadow-sm">
+            <button onclick="setWorkLayout('grid')" id="layout-grid-btn" class="px-3 py-1 rounded-full text-xs font-mono bg-dun text-bistre font-medium transition-all">Grid</button>
+            <button onclick="setWorkLayout('table')" id="layout-table-btn" class="px-3 py-1 rounded-full text-xs font-mono text-kobicha hover:text-bistre transition-all">Index</button>
           </div>
         </div>
       </div>
@@ -282,14 +286,14 @@
 
       <!-- WORK COMPACT ARCHIVE TABLE CONTAINER (Cursor-following Image Preview) -->
       <div id="work-table-container" class="hidden">
-        <div class="grid grid-cols-12 text-xs font-mono uppercase tracking-widest text-muted pb-4 border-b border-black/10 px-4">
+        <div class="grid grid-cols-12 text-xs font-mono uppercase tracking-widest text-kobicha pb-4 border-b border-bistre/10 px-4">
           <div class="col-span-2 sm:col-span-1">Year</div>
           <div class="col-span-6 sm:col-span-4">Project / System</div>
           <div class="hidden sm:block sm:col-span-3">Category</div>
           <div class="hidden md:block md:col-span-3">Tech / Stack</div>
           <div class="col-span-4 sm:col-span-1 text-right">Link</div>
         </div>
-        <div id="archive-rows-list" class="divide-y divide-black/[0.07]">
+        <div id="archive-rows-list" class="divide-y divide-bistre/10">
           <!-- Injected via JavaScript -->
         </div>
       </div>
@@ -304,60 +308,60 @@
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 pb-28">
       
       <!-- Top Narrative Header + Portrait Container -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pb-20 border-b border-black/[0.08]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pb-20 border-b border-bistre/10">
         <div class="lg:col-span-7 reveal-up active">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-4">About &amp; Curriculum Vitae</span>
-          <h1 class="text-4xl sm:text-6xl font-normal tracking-tight leading-[1.08] mb-8">
-            <span class="cfg-full-name">Shaan Ahamed M</span> is a Computer Science Engineer and Physical AI specialist dedicated to <span class="font-serif italic text-accent">building autonomous machines that see, reason, and act in the real world.</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-4">About &amp; Curriculum Vitae</span>
+          <h1 class="text-4xl sm:text-6xl font-normal tracking-tight leading-[1.08] text-bistre mb-8">
+            <span class="cfg-full-name">Shaan Ahamed M</span> is a Computer Science Engineer and Physical AI specialist dedicated to <span class="font-serif italic">building autonomous machines that see, reason, and act in the real world.</span>
           </h1>
-          <p class="text-lg sm:text-xl text-muted font-light leading-relaxed mb-6">
-            Currently pursuing Computer Science Engineering at <span class="text-ink font-normal">VIT Vellore</span> and a National Hackathon Runner-up who thrives where high stakes meet tight deadlines. My engineering philosophy is simple: stay curious, build with empathy, and deliver under pressure.
+          <p class="text-lg sm:text-xl text-kobicha font-light leading-relaxed mb-6">
+            Currently pursuing Computer Science Engineering at <span class="text-bistre font-normal">VIT Vellore</span> and a National Hackathon Runner-up who thrives where high stakes meet tight deadlines. My engineering philosophy is simple: stay curious, build with empathy, and deliver under pressure.
           </p>
-          <p class="text-lg sm:text-xl text-muted font-light leading-relaxed">
+          <p class="text-lg sm:text-xl text-kobicha font-light leading-relaxed">
             Whether optimizing Embedded C++ algorithms on microcontrollers, training computer vision pipelines, or deploying autonomous rovers across rough terrain, I specialize in turning technical complexity into tangible, zero-cloud real-world tools.
           </p>
         </div>
 
         <!-- High-Contrast Portrait Container -->
         <div class="lg:col-span-5 reveal-up active">
-          <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#D6C0A2] border border-black/10 group">
+          <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-ivory border border-lion/60 group shadow-md">
             <img 
               id="about-portrait"
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=85" 
               alt="Portrait Placeholder" 
               class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
             />
-            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#E2CEB1]/90 backdrop-blur-md border border-black/10 flex items-center justify-between">
+            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-ivory/90 backdrop-blur-md border border-lion/50 flex items-center justify-between shadow-sm">
               <div>
-                <p class="text-xs font-mono uppercase text-muted">Ready for your portrait</p>
-                <p class="text-sm text-ink cfg-location">Vellore, India / Remote</p>
+                <p class="text-xs font-mono uppercase text-kobicha">Ready for your portrait</p>
+                <p class="text-sm text-bistre font-medium cfg-location">Vellore, India / Remote</p>
               </div>
-              <a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-full bg-ink text-sand text-xs font-medium hover:bg-black transition-all">Download CV PDF</a>
+              <a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-full bg-bistre text-ivory text-xs font-medium hover:bg-black transition-all">Download CV PDF</a>
             </div>
           </div>
         </div>
       </div>
 
       <!-- 01 / TRACK RECORD (EXPERIENCE TIMELINE) -->
-      <div class="py-20 border-b border-black/[0.08] reveal-up">
+      <div class="py-20 border-b border-bistre/10 reveal-up">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div class="lg:col-span-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">01 / Track Record</span>
-            <h2 class="text-3xl sm:text-4xl font-normal tracking-tight">Academic rigor &amp; <span class="font-serif italic text-accent">hackathon victories.</span></h2>
+            <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-2">01 / Track Record</span>
+            <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-bistre">Academic rigor &amp; <span class="font-serif italic">hackathon victories.</span></h2>
           </div>
 
-          <div class="lg:col-span-8 divide-y divide-black/[0.08]" id="experience-timeline-container">
+          <div class="lg:col-span-8 divide-y divide-bistre/10" id="experience-timeline-container">
             <!-- Injected via JavaScript -->
           </div>
         </div>
       </div>
 
       <!-- 02 / CAPABILITIES MATRIX (3 COLUMNS) -->
-      <div class="py-20 border-b border-black/[0.08] reveal-up">
+      <div class="py-20 border-b border-bistre/10 reveal-up">
         <div class="max-w-3xl mb-14">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">02 / Capabilities</span>
-          <h2 class="text-3xl sm:text-5xl font-normal tracking-tight leading-tight">
-            Engineering across the entire stack by <span class="font-serif italic text-accent">bridging physical hardware and intelligent code.</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-2">02 / Capabilities</span>
+          <h2 class="text-3xl sm:text-5xl font-normal tracking-tight leading-tight text-bistre">
+            Engineering across the entire stack by <span class="font-serif italic">bridging physical hardware and intelligent code.</span>
           </h2>
         </div>
 
@@ -370,17 +374,17 @@
       <div class="py-20 reveal-up">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div class="lg:col-span-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-2">03 / Beyond the Terminal</span>
-            <h2 class="text-3xl sm:text-4xl font-normal tracking-tight">Obsessed with <span class="font-serif italic text-accent">how things work.</span></h2>
+            <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-2">03 / Beyond the Terminal</span>
+            <h2 class="text-3xl sm:text-4xl font-normal tracking-tight text-bistre">Obsessed with <span class="font-serif italic">how things work.</span></h2>
           </div>
-          <div class="lg:col-span-8 space-y-6 text-muted text-lg font-light leading-relaxed">
+          <div class="lg:col-span-8 space-y-6 text-kobicha text-lg font-light leading-relaxed">
             <p>
               Whether it was taking apart gadgets as a kid, pulling all-nighters at 36-hour hackathons soldering microcontrollers, or obsessing over edge inference latency, engineering has always been about understanding mechanics and code from first principles.
             </p>
             <p>
-              Over the last few years, I’ve built assistive IoT hardware like the award-winning <span class="text-ink font-normal">Vision Stick</span>, autonomous rocker-bogie rovers under partial observability (POMDP), 3D spatial NeRF reconstructors, and real-time agricultural telemetry probes. Each project reinforced one core conviction: true engineering doesn't need multi-thousand-dollar cloud servers; it needs smart, elegant architecture.
+              Over the last few years, I’ve built assistive IoT hardware like the award-winning <span class="text-bistre font-medium">Vision Stick</span>, autonomous rocker-bogie rovers under partial observability (POMDP), 3D spatial NeRF reconstructors, and real-time agricultural telemetry probes. Each project reinforced one core conviction: true engineering doesn't need multi-thousand-dollar cloud servers; it needs smart, elegant architecture.
             </p>
-            <p class="text-ink font-normal">
+            <p class="text-bistre font-normal">
               We need builders who have heart, care deeply about craft, and can translate ambitious autonomy into working physical reality. If you only live once, this sure is a pretty cool time to build.
             </p>
           </div>
@@ -393,56 +397,56 @@
   <!-- ======================================================= -->
   <!-- PROJECT CASE STUDY MODAL                                -->
   <!-- ======================================================= -->
-  <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-10 bg-black/50 backdrop-blur-md overflow-y-auto" onclick="if(event.target === this) closeProjectModal()">
-    <div class="relative w-full max-w-4xl bg-[#EDE2D0] border border-black/15 rounded-3xl overflow-hidden shadow-2xl my-auto text-ink">
+  <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 md:p-10 bg-bistre/60 backdrop-blur-md overflow-y-auto" onclick="if(event.target === this) closeProjectModal()">
+    <div class="relative w-full max-w-4xl bg-ivory border border-lion/60 rounded-3xl overflow-hidden shadow-2xl my-auto text-bistre">
       
       <!-- Top Modal Bar -->
-      <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-black/10">
+      <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-bistre/10">
         <div class="flex items-center gap-3">
-          <span id="modal-category" class="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-black/10 text-ink">Category</span>
-          <span id="modal-year" class="text-xs font-mono text-muted">2026</span>
+          <span id="modal-category" class="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-dun text-bistre font-medium">Category</span>
+          <span id="modal-year" class="text-xs font-mono text-kobicha">2026</span>
         </div>
-        <button onclick="closeProjectModal()" class="w-9 h-9 rounded-full bg-black/10 hover:bg-ink hover:text-sand flex items-center justify-center text-sm transition-colors">
+        <button onclick="closeProjectModal()" class="w-9 h-9 rounded-full bg-dun hover:bg-bistre hover:text-ivory flex items-center justify-center text-sm transition-colors">
           ✕
         </button>
       </div>
 
       <!-- Scrollable Modal Content -->
       <div class="p-6 sm:p-10 max-h-[80vh] overflow-y-auto">
-        <h2 id="modal-title" class="text-3xl sm:text-5xl font-normal tracking-tight mb-4">Project Title</h2>
-        <p id="modal-subtitle" class="text-lg text-muted font-light mb-8">Project one-line hook goes here.</p>
+        <h2 id="modal-title" class="text-3xl sm:text-5xl font-normal tracking-tight text-bistre mb-4">Project Title</h2>
+        <p id="modal-subtitle" class="text-lg text-kobicha font-light mb-8">Project one-line hook goes here.</p>
 
-        <div class="aspect-video rounded-2xl overflow-hidden bg-[#D6C0A2] mb-8 border border-black/10">
+        <div class="aspect-video rounded-2xl overflow-hidden bg-dun/50 mb-8 border border-lion/40">
           <img id="modal-image" src="" alt="Project Cover" class="w-full h-full object-cover" />
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 p-5 rounded-2xl bg-[#E2CEB1]/70 border border-black/[0.08]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 p-5 rounded-2xl bg-dun/40 border border-lion/40">
           <div>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Role</span>
-            <p id="modal-role" class="text-sm text-ink">Lead Hardware &amp; AI Architect</p>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-kobicha block mb-1">Role</span>
+            <p id="modal-role" class="text-sm text-bistre font-medium">Lead Hardware &amp; AI Architect</p>
           </div>
           <div>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Tech Stack</span>
-            <p id="modal-stack" class="text-sm text-ink">Embedded C, ESP32, Python, OpenCV</p>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-kobicha block mb-1">Tech Stack</span>
+            <p id="modal-stack" class="text-sm text-bistre font-medium">Embedded C, ESP32, Python, OpenCV</p>
           </div>
           <div>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-muted block mb-1">Outcome / Impact</span>
-            <p id="modal-metrics" class="text-sm text-emerald-800 font-medium">Awarded 2nd Prize @ INNOHACK '26</p>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-kobicha block mb-1">Outcome / Impact</span>
+            <p id="modal-metrics" class="text-sm text-emerald-800 font-semibold">Awarded 2nd Prize @ INNOHACK '26</p>
           </div>
         </div>
 
-        <div class="space-y-4 text-muted leading-relaxed mb-10">
-          <h4 class="text-xs font-mono uppercase tracking-widest text-ink">Overview &amp; Architecture</h4>
+        <div class="space-y-4 text-kobicha leading-relaxed mb-10">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-bistre font-semibold">Overview &amp; Architecture</h4>
           <p id="modal-description">
             Detailed case study breakdown.
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-4 pt-6 border-t border-black/10">
-          <a id="modal-live-link" href="#" target="_blank" class="px-6 py-3 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all">
+        <div class="flex flex-wrap gap-4 pt-6 border-t border-bistre/10">
+          <a id="modal-live-link" href="#" target="_blank" class="px-6 py-3 rounded-full bg-bistre text-ivory font-medium text-sm hover:bg-black transition-all shadow-sm">
             Launch Live Project ↗
           </a>
-          <a id="modal-repo-link" href="#" target="_blank" class="px-6 py-3 rounded-full border border-black/20 hover:border-black text-sm text-ink transition-all">
+          <a id="modal-repo-link" href="#" target="_blank" class="px-6 py-3 rounded-full border border-bistre/20 hover:border-bistre text-sm text-bistre font-medium transition-all">
             View Source / GitHub ↗
           </a>
         </div>
@@ -453,18 +457,18 @@
   <!-- ======================================================= -->
   <!-- FOOTER (EXACT KYSON DANA FOOTER ARCHITECTURE)            -->
   <!-- ======================================================= -->
-  <footer id="contact-footer" class="border-t border-black/[0.08] bg-[#D6C0A2] pt-20 pb-16 text-ink">
+  <footer id="contact-footer" class="border-t border-bistre/10 bg-ivory pt-20 pb-16 text-bistre">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
       
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-20 border-b border-black/[0.08] reveal-up">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-20 border-b border-bistre/10 reveal-up">
         
         <!-- Col 1: Work With Me -->
         <div class="md:col-span-5">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">Work with me</span>
-          <h2 class="text-4xl sm:text-5xl font-normal tracking-tight mb-6">
-            Let’s build something <span class="font-serif italic text-accent">unforgettable.</span>
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-3">Work with me</span>
+          <h2 class="text-4xl sm:text-5xl font-normal tracking-tight text-bistre mb-6">
+            Let’s build something <span class="font-serif italic">unforgettable.</span>
           </h2>
-          <a href="mailto:shaanahamedm@gmail.com" class="cfg-email inline-flex items-center gap-3 px-7 py-4 rounded-full bg-ink text-sand font-medium text-sm hover:bg-black transition-all">
+          <a href="mailto:shaanahamedm@gmail.com" class="cfg-email inline-flex items-center gap-3 px-7 py-4 rounded-full bg-bistre text-ivory font-medium text-sm hover:bg-black transition-all shadow-sm">
             <span>shaanahamedm@gmail.com</span>
             <span>↗</span>
           </a>
@@ -473,40 +477,40 @@
         <!-- Col 2: Connect & Location -->
         <div class="md:col-span-3 space-y-6">
           <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">Connect</span>
+            <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-3">Connect</span>
             <ul class="space-y-2.5 text-sm">
-              <li><a href="https://github.com/ShaanAhamedM" target="_blank" class="text-muted hover:text-ink transition-colors">GitHub ↗</a></li>
-              <li><a href="https://www.linkedin.com/in/shaanahamedm/" target="_blank" class="text-muted hover:text-ink transition-colors">LinkedIn ↗</a></li>
-              <li><a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="text-muted hover:text-ink transition-colors">Resume / CV (PDF) ↗</a></li>
+              <li><a href="https://github.com/ShaanAhamedM" target="_blank" class="text-kobicha hover:text-bistre transition-colors">GitHub ↗</a></li>
+              <li><a href="https://www.linkedin.com/in/shaanahamedm/" target="_blank" class="text-kobicha hover:text-bistre transition-colors">LinkedIn ↗</a></li>
+              <li><a href="assets/ShaanAhamedM_Resume.pdf" target="_blank" class="text-kobicha hover:text-bistre transition-colors">Resume / CV (PDF) ↗</a></li>
             </ul>
           </div>
           <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-1">Location</span>
-            <p class="text-sm text-ink cfg-location">Vellore, India / Remote</p>
+            <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-1">Location</span>
+            <p class="text-sm text-bistre font-medium cfg-location">Vellore, India / Remote</p>
           </div>
         </div>
 
         <!-- Col 3: Newsletter ("Pinky Promise" exact Kyson vibe) -->
         <div class="md:col-span-4">
-          <span class="text-xs font-mono uppercase tracking-widest text-muted block mb-3">Newsletter</span>
-          <p class="text-sm text-muted leading-relaxed mb-4 font-light">
+          <span class="text-xs font-mono uppercase tracking-widest text-kobicha block mb-3">Newsletter</span>
+          <p class="text-sm text-kobicha leading-relaxed mb-4 font-light">
             Occasional notes and breakdowns exploring physical AI, on-device neural perception, and autonomous robotics architectures.
           </p>
           <form onsubmit="handleNewsletter(event)" class="flex gap-2">
-            <input type="email" required placeholder="you@domain.com" class="flex-1 px-4 py-3 rounded-full bg-[#EDE2D0] border border-black/10 text-xs text-ink placeholder:text-muted focus:outline-none focus:border-black" />
-            <button type="submit" class="px-5 py-3 rounded-full bg-black/10 hover:bg-ink hover:text-sand text-xs font-medium transition-colors">
+            <input type="email" required placeholder="you@domain.com" class="flex-1 px-4 py-3 rounded-full bg-dun/50 border border-lion/60 text-xs text-bistre placeholder:text-kobicha/70 focus:outline-none focus:border-bistre" />
+            <button type="submit" class="px-5 py-3 rounded-full bg-bistre text-ivory hover:bg-black text-xs font-medium transition-colors">
               Join
             </button>
           </form>
-          <p class="text-[11px] text-muted mt-3">I'll respect your inbox. Pinky promise.</p>
+          <p class="text-[11px] text-kobicha mt-3">I'll respect your inbox. Pinky promise.</p>
         </div>
 
       </div>
 
       <!-- Bottom Copyright & Scroll to Top -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-muted font-mono gap-4">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-kobicha font-mono gap-4">
         <p>© 2026 <span class="cfg-full-name">Shaan Ahamed M</span>. Physical AI &amp; Autonomous Systems.</p>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-ink transition-colors">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-bistre transition-colors">
           Back to top ↑
         </button>
       </div>
