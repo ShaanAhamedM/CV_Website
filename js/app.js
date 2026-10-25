@@ -194,8 +194,8 @@ function renderWorkArchive() {
       class="grid grid-cols-12 py-5 px-4 items-center hover:bg-ivory/80 cursor-pointer transition-colors group"
     >
       <div class="col-span-2 sm:col-span-1 font-mono text-xs text-kobicha">${proj.year}</div>
-      <div class="col-span-6 sm:col-span-4">
-        <p class="text-base font-medium text-bistre group-hover:translate-x-1 transition-transform">${proj.title}</p>
+      <div class="col-span-6 sm:col-span-4 pr-4">
+        <p class="text-sm sm:text-base font-medium text-bistre group-hover:translate-x-1 transition-transform">${proj.title}</p>
         <p class="text-xs text-kobicha line-clamp-1 font-light">${proj.subtitle}</p>
       </div>
       <div class="hidden sm:block sm:col-span-3">

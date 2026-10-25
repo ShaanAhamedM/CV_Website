@@ -76,30 +76,30 @@
   <!-- TOP FIXED NAVIGATION BAR (Editorial Cream Glassmorphic) -->
   <!-- ======================================================= -->
   <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-dun/85 border-b border-bistre/10 transition-all duration-500">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 h-16 sm:h-20 flex items-center justify-between gap-2">
       
       <!-- Brand Identity Left -->
-      <a href="#home" onclick="switchView('home')" class="group flex items-center gap-3 text-left">
+      <a href="#home" onclick="switchView('home')" class="group flex items-center gap-2 sm:gap-3 text-left shrink-0">
         <div class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></div>
-        <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
-          <span class="text-xs font-mono uppercase tracking-widest text-kobicha group-hover:text-bistre transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
-          <span class="text-sm md:text-base font-medium tracking-tight text-bistre cfg-full-name">Shaan Ahamed M</span>
+        <div class="flex flex-col md:flex-row md:items-baseline md:gap-2">
+          <span class="hidden md:inline text-xs font-mono uppercase tracking-widest text-kobicha group-hover:text-bistre transition-colors cfg-short-title">Physical AI &amp; Autonomous Systems</span>
+          <span class="text-xs sm:text-sm md:text-base font-medium tracking-tight text-bistre leading-tight cfg-full-name">Shaan Ahamed M</span>
         </div>
       </a>
 
       <!-- Center / Right Pill Navigation -->
-      <nav class="flex items-center gap-1 sm:gap-2 bg-ivory border border-lion/50 p-1.5 rounded-full shadow-sm">
-        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all">
+      <nav class="flex items-center gap-0.5 sm:gap-2 bg-ivory border border-lion/50 p-1.5 rounded-full shadow-sm">
+        <button onclick="switchView('home')" id="nav-home" class="nav-link active-tab px-2.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm whitespace-nowrap text-kobicha hover:text-bistre transition-all">
           Index
         </button>
-        <button onclick="switchView('work')" id="nav-work" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all flex items-center gap-1.5">
+        <button onclick="switchView('work')" id="nav-work" class="nav-link px-2.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm whitespace-nowrap text-kobicha hover:text-bistre transition-all flex items-center gap-1.5">
           <span>Work</span>
-          <span class="text-[10px] font-mono bg-dun px-1.5 py-0.2 rounded-full text-bistre" id="project-count-badge">12</span>
+          <span class="hidden sm:inline text-[10px] font-mono bg-dun px-1.5 py-0.2 rounded-full text-bistre" id="project-count-badge">12</span>
         </button>
-        <button onclick="switchView('about')" id="nav-about" class="nav-link px-4 py-1.5 rounded-full text-xs sm:text-sm text-kobicha hover:text-bistre transition-all">
-          About &amp; CV
+        <button onclick="switchView('about')" id="nav-about" class="nav-link px-2.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm whitespace-nowrap text-kobicha hover:text-bistre transition-all">
+          About<span class="hidden sm:inline"> &amp; CV</span>
         </button>
-        <a href="#contact-footer" class="px-4 py-1.5 rounded-full text-xs sm:text-sm bg-bistre text-ivory font-medium hover:bg-black transition-all ml-1">
+        <a href="#contact-footer" class="px-2.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm whitespace-nowrap bg-bistre text-ivory font-medium hover:bg-black transition-all ml-1">
           Contact
         </a>
       </nav>
@@ -109,7 +109,7 @@
   <!-- ======================================================= -->
   <!-- VIEW 1: HOME (MONUMENTAL HERO & FEATURED EDITORIAL WORK) -->
   <!-- ======================================================= -->
-  <main id="view-home" class="pt-28 md:pt-36">
+  <main id="view-home" class="pt-24 md:pt-36">
     
     <!-- HERO SECTION -->
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 pb-20 md:pb-28">
@@ -155,7 +155,7 @@
           <h2 class="text-2xl sm:text-3xl font-normal tracking-tight leading-snug text-bistre">Stay curious and <span class="font-serif italic">Engineering machines that see, reason, and act.</span></h2>
         </div>
         <div class="lg:col-span-8">
-          <p class="text-xl sm:text-2xl font-light leading-[1.45] text-bistre/95 mb-8">
+          <p class="text-lg sm:text-2xl font-light leading-[1.5] text-bistre/95 mb-8">
             True engineering lies in making complex systems work seamlessly together to solve real human problems economically. From training accelerated vision models to bridging embedded firmware with intuitive software, I focus on building accessible, zero-cloud-dependent tools that directly impact how people interact with the physical world.
           </p>
           <button onclick="switchView('about')" class="inline-flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-kobicha hover:text-bistre transition-colors group">
@@ -227,7 +227,7 @@
   <!-- ======================================================= -->
   <!-- VIEW 2: WORK & HIGH-VOLUME PROJECT ARCHIVE              -->
   <!-- ======================================================= -->
-  <main id="view-work" class="pt-28 md:pt-36 hidden">
+  <main id="view-work" class="pt-24 md:pt-36 hidden">
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 pb-24">
       
       <!-- Section Header -->
@@ -304,7 +304,7 @@
   <!-- ======================================================= -->
   <!-- VIEW 3: ABOUT & CV (EXACT MATCH TO KYSON'S /ABOUT)      -->
   <!-- ======================================================= -->
-  <main id="view-about" class="pt-28 md:pt-36 hidden">
+  <main id="view-about" class="pt-24 md:pt-36 hidden">
     <section class="max-w-[1400px] mx-auto px-6 md:px-12 pb-28">
       
       <!-- Top Narrative Header + Portrait Container -->
