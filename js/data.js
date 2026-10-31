@@ -19,6 +19,7 @@ const SITE_CONFIG = {
   philosophyTitle: "Stay curious and Engineering machines that see, reason, and act.",
   philosophyBody: "True engineering lies in making complex systems work seamlessly together to solve real human problems economically. From training accelerated vision models to bridging embedded firmware with intuitive software, I focus on building accessible, zero-cloud-dependent tools that directly impact how people interact with the physical world.",
   resumePdfUrl: "assets/ShaanAhamedM_Resume.pdf",
+  siteUrl: "https://shaanahamedm.cv",
   socials: {
     github: "https://github.com/ShaanAhamedM",
     linkedin: "https://www.linkedin.com/in/shaanahamedm/",
