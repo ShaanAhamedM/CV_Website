@@ -435,11 +435,17 @@
           </div>
         </div>
 
-        <div class="space-y-4 text-kobicha leading-relaxed mb-10">
+        <div class="space-y-4 text-kobicha leading-relaxed mb-8">
           <h4 class="text-xs font-mono uppercase tracking-widest text-bistre font-semibold">Overview &amp; Architecture</h4>
           <p id="modal-description">
             Detailed case study breakdown.
           </p>
+        </div>
+
+        <!-- Secondary Gallery / Technical Visuals -->
+        <div id="modal-gallery-container" class="hidden space-y-3 mb-8">
+          <h4 class="text-xs font-mono uppercase tracking-widest text-bistre font-semibold">Visuals &amp; Technical Telemetry</h4>
+          <div id="modal-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
         </div>
 
         <div class="flex flex-wrap gap-4 pt-6 border-t border-bistre/10">
@@ -518,7 +524,7 @@
   </footer>
 
   <!-- Scripts: Data Layer First, Then Application Logic -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 </html>

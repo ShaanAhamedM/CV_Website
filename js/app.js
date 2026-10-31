@@ -331,6 +331,23 @@ function openProjectModal(projId) {
   document.getElementById('modal-metrics').textContent = proj.metrics || 'Shipped to production';
   document.getElementById('modal-description').textContent = proj.description || '';
 
+  // Gallery Visuals
+  const galleryContainer = document.getElementById('modal-gallery-container');
+  const galleryGrid = document.getElementById('modal-gallery-grid');
+  if (galleryContainer && galleryGrid) {
+    if (proj.gallery && proj.gallery.length > 0) {
+      galleryGrid.innerHTML = proj.gallery.map(imgSrc => `
+        <div class="rounded-xl overflow-hidden bg-dun/50 border border-lion/40 shadow-sm aspect-video">
+          <img src="${imgSrc}" alt="${proj.title}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </div>
+      `).join('');
+      galleryContainer.classList.remove('hidden');
+    } else {
+      galleryContainer.classList.add('hidden');
+      galleryGrid.innerHTML = '';
+    }
+  }
+
   const liveLink = document.getElementById('modal-live-link');
   if (proj.liveUrl && proj.liveUrl !== '#') {
     liveLink.href = proj.liveUrl;
