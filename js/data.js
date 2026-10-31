@@ -45,7 +45,7 @@ const PROJECTS_DATA = [
     role: "Lead Hardware & Edge AI Architect",
     stack: "Embedded C, ESP32, OpenCV, Android / Java, Gyroscope & Ultrasonic",
     metrics: "2nd Place @ INNOHACK '26 (₹30k Prize) • Sub-80ms Edge Inference",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=85",
+    image: "assets/images/vision_stick_win.jpg",
     description: "An ultra-affordable smart cane engineered for the visually impaired. Built to solve the prohibitive cost of assistive tech by offloading compute to the user's smartphone. Connects lightweight physical sensors (camera, ultrasonic distance, gyroscope) via ESP32 to a background service that delivers real-time auditory scene narration, GPS guidance, and emergency fall detection with zero cloud latency.",
     liveUrl: "#",
     repoUrl: "https://github.com/ShaanAhamedM/VisionStick_Codaholics"
@@ -63,7 +63,7 @@ const PROJECTS_DATA = [
     role: "Robotics & Autonomy Engineer",
     stack: "Python, C++, ROS 2, POMDP, Rocker-Bogie Kinematics, SLAM, LiDAR",
     metrics: "Autonomous Search & Rescue under Partial Observability",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
+    image: "assets/images/operation_axiom_3d.png",
     description: "Designed and engineered an autonomous rocker-bogie planetary exploration rover capable of traversing extreme, unstructured obstacles. Implements Partially Observable Markov Decision Processes (POMDP) for autonomous search, rescue, and obstacle traversal under noisy sensor telemetry.",
     liveUrl: "#",
     repoUrl: "https://github.com/ShaanAhamedM/WallE_Eve"
@@ -149,7 +149,7 @@ const PROJECTS_DATA = [
     role: "Computer Vision Researcher",
     stack: "Python, PyTorch, Convolutional Neural Networks, OpenCV, Jupyter",
     metrics: "Sub-millimeter micro-crack & contaminant detection",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/wafer_anomaly_dashboard.png",
     description: "Deep learning automated optical inspection (AOI) pipeline for semiconductor silicon wafers, categorizing microscopic etch faults, surface scratches, and contamination anomalies at production scale.",
     liveUrl: "#",
     repoUrl: "https://github.com/ShaanAhamedM/WaferAnomalyDetector"
@@ -165,7 +165,7 @@ const PROJECTS_DATA = [
     role: "Systems Architect",
     stack: "Python, Shell/Bash, C, Wayland / Hyprland, Linux Kernel API",
     metrics: "Sub-millisecond system telemetry • Unified Nordic Charcoal theme",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/developer_desktop.png",
     description: "A keyboard-driven developer environment built around geometric symmetry and custom low-overhead daemon monitors. Features unified Nordic Charcoal theming and instant system diagnostic overlays.",
     liveUrl: "#",
     repoUrl: "https://github.com/ShaanAhamedM/DeveloperDesktop"
@@ -197,7 +197,7 @@ const PROJECTS_DATA = [
     role: "NLP & ML Engineer",
     stack: "Python, Whisper AI, HuggingFace Transformers, PyTorch",
     metrics: "Cross-dialect colloquial translation with zero semantic drift",
-    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1000&q=80",
+    image: "assets/images/beyond_translation.png",
     description: "An advanced speech pipeline engineered to bridge colloquial regional dialect barriers without losing emotional emphasis, cultural phrasing, or vocal inflection.",
     liveUrl: "#",
     repoUrl: "https://github.com/ShaanAhamedM/BeyondTranslation-FlyingACE"
